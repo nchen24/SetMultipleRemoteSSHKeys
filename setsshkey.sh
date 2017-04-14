@@ -7,8 +7,7 @@ SERVERS="bar\
         
 for server in $SERVERS
 do
-    ssh ${MYNAME}@${server} mkdir -p .ssh
-    cat ~/.ssh/id_rsa.pub | ssh ${MYNAME}@${server} 'cat >> .ssh/authorized_keys'
+    cat ~/.ssh/id_rsa.pub | ssh ${MYNAME}@${server} 'mkdir -p .ssh && cat >> .ssh/authorized_keys'
 done
 
 
